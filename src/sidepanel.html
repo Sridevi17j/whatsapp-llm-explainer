@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WhatsApp Explainer</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <div>
+          <h1>Explainer</h1>
+          <p id="status">Select a WhatsApp message.</p>
+        </div>
+        <button id="optionsButton" class="icon-button" type="button" title="Settings">S</button>
+      </header>
+
+      <section class="message-preview">
+        <div class="label">Selected</div>
+        <div id="selectedText" class="selected-text">No message captured yet.</div>
+      </section>
+
+      <section class="ask">
+        <label for="question">Ask</label>
+        <textarea id="question" rows="3">Explain this</textarea>
+        <div class="presets">
+          <button data-prompt="Explain this">Explain</button>
+          <button data-prompt="What are they asking me to do?">Intent</button>
+          <button data-prompt="Draft a polite short reply.">Reply</button>
+        </div>
+        <div class="actions">
+          <button id="explainButton" class="primary" type="button">Explain message</button>
+          <button id="clearButton" class="secondary" type="button">Clear chat</button>
+        </div>
+      </section>
+
+      <section class="answer">
+        <div class="label">Answer</div>
+        <div id="chatTranscript" class="chat-transcript">The explanation will appear here.</div>
+      </section>
+    </main>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

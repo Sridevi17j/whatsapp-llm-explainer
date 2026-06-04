@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp LLM Explainer",
+  "description": "Explain selected WhatsApp Web messages from a side panel.",
+  "version": "0.1.0",
+  "permissions": ["storage", "sidePanel", "tabs"],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.firecrawl.dev/*",
+    "https://text.pollinations.ai/*",
+    "https://api.groq.com/*",
+    "https://openrouter.ai/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/sidepanel.html"
+  },
+  "options_page": "src/options.html",
+  "action": {
+    "default_title": "WhatsApp LLM Explainer"
+  }
+}
