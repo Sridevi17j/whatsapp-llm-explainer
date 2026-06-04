@@ -1,8 +1,10 @@
 # WhatsApp LLM Explainer
 
-A local Chrome extension for asking an LLM about selected WhatsApp Web messages without copy-pasting chats manually.
+WhatsApp group chats can move fast, include unfamiliar references, and be hard to understand out of context. Usually, you have to copy the chat, manually remove phone numbers/names, paste it into an LLM, and then ask what it means.
 
-Before sending text to the LLM, the extension redacts phone numbers and maps detected contact names to aliases like `Person 1`, `Person 2`. Message content is preserved.
+This Chrome extension removes that friction. Select a WhatsApp Web message, click `Explain selected`, and ask an LLM about it from the side panel.
+
+Before sending text to the LLM, the extension redacts phone numbers and maps detected contact names to aliases like `Person 1`, `Person 2`. The actual message content is preserved.
 
 ## Install
 
