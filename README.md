@@ -16,7 +16,9 @@ WhatsApp LLM Explainer makes that easier. Select a WhatsApp Web message, click `
 4. Click `Load unpacked`.
 5. Select the `whatsapp-llm-explainer` folder.
 
-## Set API Key
+## Set API Keys
+
+Recommended LLM provider: `OpenRouter`. It has free model options, including `openrouter/free`, though free limits can change.
 
 1. In `chrome://extensions`, find `WhatsApp LLM Explainer`.
 2. Click `Details`.
@@ -26,6 +28,15 @@ WhatsApp LLM Explainer makes that easier. Select a WhatsApp Web message, click `
 6. Paste your OpenRouter API key.
 7. Click `Save settings`.
 8. Click `Test provider` to verify the key works.
+
+Optional link scraping: `Firecrawl`. Firecrawl also has a free-tier option. Add a Firecrawl API key only if you want the extension to fetch and summarize URLs shared in WhatsApp messages.
+
+To enable Firecrawl:
+
+1. Turn on `Scrape selected links with Firecrawl`.
+2. Paste your Firecrawl API key.
+3. Set `Firecrawl max URLs`.
+4. Click `Save settings`.
 
 ## Use
 
@@ -40,7 +51,7 @@ The side panel keeps follow-up context internally, but only shows the latest ans
 ## Optional Settings
 
 - `Context messages`: how many nearby WhatsApp messages to include for context. Set `0` if you want to send only selected text.
-- `Firecrawl`: optional link scraping. Requires a Firecrawl API key.
+- `Firecrawl`: optional link scraping. Requires a Firecrawl API key and has a free-tier option.
 - `Groq`: optional alternative LLM provider.
 - `Gemini`: available, but OpenRouter is the recommended tested setup.
 
