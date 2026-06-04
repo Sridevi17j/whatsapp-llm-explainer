@@ -1,16 +1,4 @@
-const BUTTON_CLASS = "wle-explain-button";
-let activeButton = null;
-let activeBubble = null;
-let hideTimer = null;
 let selectionButton = null;
-
-document.addEventListener("mouseover", (event) => {
-  const bubble = findMessageBubble(event.target);
-  if (!bubble || bubble === activeBubble) return;
-
-  activeBubble = bubble;
-  attachButton(bubble);
-});
 
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (message?.type === "CAPTURE_SELECTION") {
@@ -119,63 +107,6 @@ function showSelectionButton() {
 function removeSelectionButton() {
   if (selectionButton) selectionButton.remove();
   selectionButton = null;
-}
-
-function attachButton(bubble) {
-  clearTimeout(hideTimer);
-  if (activeButton) activeButton.remove();
-
-  const button = document.createElement("button");
-  button.className = BUTTON_CLASS;
-  button.type = "button";
-  button.textContent = "?";
-  button.title = "Explain this message";
-  button.addEventListener("click", async (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    await captureAndOpen(bubble);
-  });
-
-  const insertionTarget = bubble.querySelector("[data-pre-plain-text]") || bubble;
-  insertionTarget.appendChild(button);
-  activeButton = button;
-
-  button.addEventListener("mouseleave", scheduleHide);
-  bubble.addEventListener("mouseleave", scheduleHide, { once: true });
-}
-
-function scheduleHide() {
-  clearTimeout(hideTimer);
-  hideTimer = setTimeout(() => {
-    if (activeButton) activeButton.remove();
-    activeButton = null;
-    activeBubble = null;
-  }, 1200);
-}
-
-async function captureAndOpen(bubble) {
-  const rawSelectedText = appendMissingUrls(extractMessageText(bubble), collectUrlsFromElement(bubble));
-  if (!rawSelectedText) {
-    showToast("Could not read this message. Try selecting the text manually.");
-    return;
-  }
-
-  const settings = await getSettings();
-  const context = collectNearbyContext(bubble, settings.contextMessages);
-  const anonymized = anonymizeCapture(rawSelectedText, context);
-  const data = {
-    selectedText: anonymized.selectedText,
-    rawSelectedText,
-    context: anonymized.context,
-    aliasMap: anonymized.aliasMap,
-    capturedAt: new Date().toISOString(),
-    captureId: makeCaptureId(anonymized.selectedText)
-  };
-
-  await chrome.storage.local.set({ wleSelectedMessage: data });
-  chrome.runtime.sendMessage({ type: "OPEN_EXPLAINER" }, (response) => {
-    if (!response?.ok) showToast(response?.error || "Could not open the explainer panel.");
-  });
 }
 
 async function captureSelectionAndOpen() {

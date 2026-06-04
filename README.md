@@ -1,10 +1,10 @@
 # WhatsApp LLM Explainer
 
-A local Chrome extension that helps explain selected WhatsApp Web messages from Chrome's side panel.
+A local Chrome extension that explains selected WhatsApp Web messages from Chrome's side panel.
 
 ## Privacy model
 
-- The extension is user-triggered. It captures a message only when you click the `?` button.
+- The extension is user-triggered. It captures text only when you select WhatsApp text and click `Explain selected`, or when you use the extension icon with text already selected.
 - Phone numbers, emails, and handles are redacted before the text is sent to the LLM. Links are preserved because they can be useful context.
 - The extension also reads link `href`s from the selected WhatsApp message DOM, because browser text selection can miss URLs rendered as link previews.
 - Sender/contact identity lines are replaced with stable aliases like `Person 1` and `Person 2` when the extension can detect them from WhatsApp metadata or contact blocks.
@@ -27,8 +27,6 @@ A local Chrome extension that helps explain selected WhatsApp Web messages from 
 10. Ask follow-up questions in the same side panel without reselecting the WhatsApp message.
 
 If the selection button does not appear, keep the text selected and click the extension icon. The side panel should still use the selected text.
-
-The hover `?` button is also supported, but WhatsApp Web changes its message HTML often, so the selected-text button is the more reliable test path.
 
 Follow-up context is maintained internally, but the UI shows only the latest answer to avoid scrolling through old responses. Follow-up chat resets automatically when you select a new WhatsApp message/block. `Clear chat` clears only the side-panel Q/A, not the selected WhatsApp context.
 
@@ -59,7 +57,7 @@ Optional:
 
 ## Known limitations
 
-- WhatsApp Web changes its internal HTML often. If the `?` button stops appearing, the content script selectors may need an update.
+- WhatsApp Web changes its internal HTML often. If selection capture stops working, the content script selectors may need an update.
 - The extension does not read encrypted WhatsApp messages directly. It only reads message text already rendered in your browser after you sign in.
 - Avoid using it on private chats without consent from people involved.
 - This is an independent local extension and is not affiliated with WhatsApp, Meta, Google, OpenRouter, Groq, or Firecrawl.
