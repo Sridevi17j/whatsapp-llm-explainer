@@ -1,10 +1,12 @@
 # WhatsApp LLM Explainer
 
-WhatsApp group chats can move fast, include unfamiliar references, and be hard to understand out of context. Usually, you have to copy the chat, manually remove phone numbers/names, paste it into an LLM, and then ask what it means.
+I’m part of a few GenAI/tech WhatsApp groups where people discuss papers, tools, benchmarks, agents, coding workflows, model behavior, and new AI terms.
 
-This Chrome extension removes that friction. Select a WhatsApp Web message, click `Explain selected`, and ask an LLM about it from the side panel.
+Many times, the discussion is useful, but the topic itself is hard to understand. Someone may mention a new technique, a benchmark, a model behavior, or a link, and I just want to quickly ask: what does this mean?
 
-Before sending text to the LLM, the extension redacts phone numbers and maps detected contact names to aliases like `Person 1`, `Person 2`. The actual message content is preserved.
+Earlier, I was copying the WhatsApp text, manually removing phone numbers/names, pasting it into an LLM, and then asking for an explanation.
+
+WhatsApp LLM Explainer makes that easier. Select a WhatsApp Web message, click `Explain selected`, and ask an LLM about it from the side panel. Before sending text to the LLM, it redacts phone numbers and maps detected contact names to aliases like `Person 1`, `Person 2`, while preserving the actual message content.
 
 ## Install
 
