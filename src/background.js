@@ -273,7 +273,7 @@ async function callOpenRouter(prompt, settings) {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${settings.apiKey}`,
       "HTTP-Referer": "https://web.whatsapp.com",
-      "X-Title": "WhatsApp LLM Explainer"
+      "X-Title": "WhatsApp Chat Explainer"
     },
     body: JSON.stringify({
       model: settings.model || "meta-llama/llama-3.1-8b-instruct:free",

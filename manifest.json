@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "WhatsApp LLM Explainer",
+  "name": "WhatsApp Chat Explainer",
   "description": "Explain selected WhatsApp Web messages from a side panel.",
   "version": "0.1.0",
   "permissions": ["storage", "sidePanel", "tabs"],
@@ -28,6 +28,6 @@
   },
   "options_page": "src/options.html",
   "action": {
-    "default_title": "WhatsApp LLM Explainer"
+    "default_title": "WhatsApp Chat Explainer"
   }
 }

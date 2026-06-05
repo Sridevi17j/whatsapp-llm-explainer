@@ -1,4 +1,4 @@
-# WhatsApp LLM Explainer
+# WhatsApp Chat Explainer
 
 I’m part of a few GenAI/tech WhatsApp groups where people discuss papers, tools, benchmarks, agents, coding workflows, model behavior, and new AI terms.
 
@@ -6,7 +6,7 @@ Many times, the discussion is useful, but the topic itself is hard to understand
 
 Earlier, I was copying chunks of WhatsApp chat into an LLM. Those copied chunks often included phone numbers or contact details from the chat, so I had to clean them up manually before asking for an explanation.
 
-WhatsApp LLM Explainer makes that easier. Select a WhatsApp Web message, click `Explain selected`, and ask an LLM about it from the side panel. Before sending text to the LLM, it redacts phone numbers and maps detected contact names to aliases like `Person 1`, `Person 2`, while preserving the actual message content.
+WhatsApp Chat Explainer makes that easier. Select a WhatsApp Web message, click `Explain selected`, and ask an LLM about it from the side panel. Before sending text to the LLM, it redacts phone numbers and maps detected contact names to aliases like `Person 1`, `Person 2`, while preserving the actual message content.
 
 ## Install
 
@@ -14,13 +14,13 @@ WhatsApp LLM Explainer makes that easier. Select a WhatsApp Web message, click `
 2. Open Chrome and go to `chrome://extensions`.
 3. Enable `Developer mode`.
 4. Click `Load unpacked`.
-5. Select the `whatsapp-llm-explainer` folder.
+5. Select the `whatsapp-chat-explainer` folder.
 
 ## Set API Keys
 
 Recommended LLM provider: `OpenRouter`. It has free model options, including `openrouter/free`, though free limits can change.
 
-1. In `chrome://extensions`, find `WhatsApp LLM Explainer`.
+1. In `chrome://extensions`, find `WhatsApp Chat Explainer`.
 2. Click `Details`.
 3. Click `Extension options`.
 4. Choose provider: `OpenRouter`.
