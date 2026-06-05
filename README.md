@@ -4,7 +4,7 @@ I’m part of a few GenAI/tech WhatsApp groups where people discuss papers, tool
 
 Many times, the discussion is useful, but the topic itself is hard to understand. Someone may mention a new technique, a benchmark, a model behavior, or a link, and I just want to quickly ask: what does this mean?
 
-Earlier, I was copying the WhatsApp text, manually removing phone numbers/names, pasting it into an LLM, and then asking for an explanation.
+Earlier, I was copying chunks of WhatsApp chat into an LLM. Those copied chunks often included phone numbers or contact details from the chat, so I had to clean them up manually before asking for an explanation.
 
 WhatsApp LLM Explainer makes that easier. Select a WhatsApp Web message, click `Explain selected`, and ask an LLM about it from the side panel. Before sending text to the LLM, it redacts phone numbers and maps detected contact names to aliases like `Person 1`, `Person 2`, while preserving the actual message content.
 
@@ -29,7 +29,7 @@ Recommended LLM provider: `OpenRouter`. It has free model options, including `op
 7. Click `Save settings`.
 8. Click `Test provider` to verify the key works.
 
-Optional link scraping: `Firecrawl`. Firecrawl also has a free-tier option. Add a Firecrawl API key only if you want the extension to fetch and summarize URLs shared in WhatsApp messages.
+Recommended for links: `Firecrawl`. If the selected WhatsApp text includes a URL, Firecrawl can fetch the page content so the LLM can explain the actual link instead of guessing from the URL alone. Firecrawl also has a free-tier option and requires its own API key.
 
 To enable Firecrawl:
 
